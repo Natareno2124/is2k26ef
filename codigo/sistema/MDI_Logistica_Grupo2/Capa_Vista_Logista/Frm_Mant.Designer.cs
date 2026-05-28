@@ -28,12 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.navegador1 = new Capa_Vista_Navegador.Navegador();
+            this.SuspendLayout();
+            // 
+            // navegador1
+            // 
+            this.navegador1.IPkId_Aplicacion = 0;
+            this.navegador1.IPkId_Modulo = 0;
+            this.navegador1.Location = new System.Drawing.Point(13, 13);
+            this.navegador1.Margin = new System.Windows.Forms.Padding(4);
+            this.navegador1.Name = "navegador1";
+            this.navegador1.SAlias = null;
+            this.navegador1.SEtiquetas = null;
+            this.navegador1.Size = new System.Drawing.Size(1573, 601);
+            this.navegador1.SNombreTabla = null;
+            this.navegador1.TabIndex = 0;
+            // 
+            // Frm_Mant
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1384, 705);
+            this.Controls.Add(this.navegador1);
+            this.Name = "Frm_Mant";
             this.Text = "Frm_Mant";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private Capa_Vista_Navegador.Navegador navegador1;
     }
 }
