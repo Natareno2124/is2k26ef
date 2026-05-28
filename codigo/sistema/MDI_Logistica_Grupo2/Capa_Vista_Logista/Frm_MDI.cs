@@ -82,6 +82,7 @@ namespace Capa_Vista_Logista
                     case MenuOpciones.Archivo:
                     case MenuOpciones.Reportes:
                     case MenuOpciones.Ayudas:
+                    case MenuOpciones.Catalogos:
                         menuItems[opcion].Enabled = true;
                         break;
                     default:
@@ -227,7 +228,7 @@ namespace Capa_Vista_Logista
         {
             string carpeta = Application.StartupPath;
 
-            while (!Directory.Exists(Path.Combine(carpeta, "ayuda")) &&
+            while (!Directory.Exists(Path.Combine(carpeta, "ayudas")) &&
                    Directory.GetParent(carpeta) != null)
             {
                 carpeta = Directory.GetParent(carpeta).FullName;
@@ -255,6 +256,14 @@ namespace Capa_Vista_Logista
         }
 
         private void cursosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_Mant m = new Frm_Mant();
+            m.MdiParent = this;
+            m.StartPosition = FormStartPosition.CenterScreen;
+            m.Show();
+        }
+
+        private void mantenimientoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_Mant m = new Frm_Mant();
             m.MdiParent = this;
