@@ -14,6 +14,7 @@ using Capa_Vista_Reporteador;
 using Capa_Vista_Navegador;
 using Capa_Vista_Componente_Consultas;
 using System.Web.UI.WebControls.WebParts;
+using System.IO;
 
 
 
@@ -217,6 +218,45 @@ namespace Capa_Vista_Logista
         private void asignarAplicacionAUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_asignacion_aplicacion_usuario m = new Frm_asignacion_aplicacion_usuario();
+            m.MdiParent = this;
+            m.StartPosition = FormStartPosition.CenterScreen;
+            m.Show();
+        }
+
+        private void asignacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string carpeta = Application.StartupPath;
+
+            while (!Directory.Exists(Path.Combine(carpeta, "ayuda")) &&
+                   Directory.GetParent(carpeta) != null)
+            {
+                carpeta = Directory.GetParent(carpeta).FullName;
+            }
+
+            string rutaAyuda = Path.Combine(
+                carpeta,
+                "ayudas",
+                "MRP",
+                "Ayudas_Produccion",
+                "AyudaProduccion.chm"
+            );
+
+            if (File.Exists(rutaAyuda))
+            {
+                Help.ShowHelp(this, rutaAyuda, "index.html");
+            }
+            else
+            {
+                MessageBox.Show("No se encontró el archivo de ayuda:\n" + rutaAyuda,
+                                "Ayuda",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+            }
+        }
+
+        private void cursosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_Mant m = new Frm_Mant();
             m.MdiParent = this;
             m.StartPosition = FormStartPosition.CenterScreen;
             m.Show();
