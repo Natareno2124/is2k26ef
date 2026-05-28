@@ -227,7 +227,7 @@ namespace Capa_Vista_Logista
         {
             string carpeta = Application.StartupPath;
 
-            while (!Directory.Exists(Path.Combine(carpeta, "ayuda")) &&
+            while (!Directory.Exists(Path.Combine(carpeta, "ayudas")) &&
                    Directory.GetParent(carpeta) != null)
             {
                 carpeta = Directory.GetParent(carpeta).FullName;
