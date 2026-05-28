@@ -10,6 +10,11 @@ using System.Windows.Forms;
 using Capa_Vista_Seguridad;
 using Capa_Controlador_Seguridad;
 using System.Drawing.Imaging;
+using Capa_Vista_Reporteador;
+using Capa_Vista_Navegador;
+using Capa_Vista_Componente_Consultas;
+using System.Web.UI.WebControls.WebParts;
+
 
 
 namespace Capa_Vista_Logista
@@ -167,6 +172,54 @@ namespace Capa_Vista_Logista
             Frm_LOGIN login = new Frm_LOGIN();
             login.ShowDialog();
             this.Close();
+        }
+
+        private void herramientasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_Reportes m = new Frm_Reportes();
+            m.MdiParent = this;
+            m.StartPosition = FormStartPosition.CenterScreen;
+            m.Show();
+        }
+
+        private void bitácoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_Bitacora m = new Frm_Bitacora();
+            m.MdiParent = this;
+            m.StartPosition = FormStartPosition.CenterScreen;
+            m.Show();
+        }
+
+        private void cambiarContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_cambiar_contrasena m = new Frm_cambiar_contrasena(Capa_Controlador_Seguridad.Cls_Usuario_Conectado.iIdUsuario);
+            m.MdiParent = this;
+            m.StartPosition = FormStartPosition.CenterScreen;
+            m.Show();
+        }
+
+        private void crearUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_Usuario m = new Frm_Usuario();
+            m.MdiParent = this;
+            m.StartPosition = FormStartPosition.CenterScreen;
+            m.Show();
+        }
+
+        private void aplicacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAplicacion m = new FrmAplicacion();
+            m.MdiParent = this;
+            m.StartPosition = FormStartPosition.CenterScreen;
+            m.Show();
+        }
+
+        private void asignarAplicacionAUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_asignacion_aplicacion_usuario m = new Frm_asignacion_aplicacion_usuario();
+            m.MdiParent = this;
+            m.StartPosition = FormStartPosition.CenterScreen;
+            m.Show();
         }
     }
 }
